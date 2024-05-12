@@ -13,4 +13,19 @@ async function getActivityData() {
         fs.writeFile("testGarminActivityExtract.json", saveFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); }) ;
     }
 
-    // getActivityData()
+    //getActivityData()
+
+//read in a file
+
+async function readFile() {
+    let filePath = "testGarminWeightExtract.json"
+    fileName = fs.readFileSync(filePath)
+    fileName = JSON.parse(fileName)
+    console.log(fileName["dateWeightList"][0])
+    fileName["dateWeightList"][0] = "hellow"
+    console.log(fileName["dateWeightList"][0])
+    console.log(fileName["dateWeightList"][0] == null)
+}
+readFile()
+
+
