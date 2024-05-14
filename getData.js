@@ -3,7 +3,8 @@ const{GarminConnect } = require('garmin-connect')
 //only 1 file der needed depnding on environment
 const fileDer = ""
 //const fileDer = "Documents/fitnessData/"
-
+const yesterday = new Date()
+yesterday.setDate(yesterday.getDate()-1)
 
 //get some activity data
 async function getData() {
