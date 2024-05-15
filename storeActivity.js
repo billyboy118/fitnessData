@@ -30,7 +30,7 @@ function getVariable() {
   actIdNumber = 3
   elementNo = 3
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 5; i++) {
     actFileLength = actFileLength - 1
     activityIdAppend = activityFile[actFileLength]["activityId"]
     
@@ -41,6 +41,7 @@ function getVariable() {
         dataExtract.splice(actIdNumber,1)
       }
     }
+    
     actIdNumber  = dataExtract.length
     elementNo = dataExtract.length
   }
@@ -91,9 +92,15 @@ function appendElements () {
 function saveFiles () {
   activityFile = JSON.stringify(activityFile)
 	fs.writeFile(fileDer + "archive/activityAppend"+Date()+ ".json", activityFile, (error) => { if(error) {console.error(error); throw error; } console.log("Activity saved in Archive"); })
-	fs.writeFile(fileDer + "activityAppend.json", activityFile, (error) => { if(error) {console.error(error); throw error; } console.log("Activity saved in upload"); }) 
-	fs.writeFile(fileDer + "uploadData/activityAppend.json", activityFile, (error) => { if(error) {console.error(error); throw error; } console.log("Activity saved in root"); })
+	fs.writeFile(fileDer + "activityAppend.json", activityFile, (error) => { if(error) {console.error(error); throw error; } console.log("Activity saved in root"); }) 
+	fs.writeFile(fileDer + "uploadData/activityAppend.json", activityFile, (error) => { if(error) {console.error(error); throw error; } console.log("Activity saved in upload"); })
 }
+
+function writeToLog() {
+  textToAppend = Date()+": activity script ran"
+  fs.appendFile(fileDer+"scriptRunLog.txt", textToAppend, (err) => {})
+}
+
 
 getVariable()
 if (dataExtract.length == 0 ) {
@@ -103,3 +110,4 @@ if (dataExtract.length == 0 ) {
   createEntries()
   appendElements()
 }
+writeToLog()

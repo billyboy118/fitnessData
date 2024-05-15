@@ -28,9 +28,9 @@ async function getData() {
         saveWeightFile = JSON.stringify(saveWeightFile)
 
         //Save all extracts
-        fs.writeFile("testGarminActivityExtract.json", saveActivityFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); })
-        fs.writeFile("testGarminHrExtract.json", saveHrFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); })
-        fs.writeFile("testGarminWeightExtract.json", saveWeightFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); }) 
+        fs.writeFile(fileDer+"testGarminActivityExtract.json", saveActivityFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); })
+        fs.writeFile(fileDer+"testGarminHrExtract.json", saveHrFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); })
+        fs.writeFile(fileDer+"testGarminWeightExtract.json", saveWeightFile, (error) => { if(error) {console.error(error); throw error; } console.log("done correct"); }) 
         }
 
 getData()
