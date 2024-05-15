@@ -2,8 +2,8 @@ const fs = require("fs")
 const yesterday = new Date()
 yesterday.setDate(yesterday.getDate()-1)
 //only 1 file der needed depnding on environment
-const fileDer = ""
-//const fileDer = "Documents/fitnessData/"
+//const fileDer = ""
+const fileDer = "Documents/fitnessData/"
 
 function storeHr() {
 	//Load in existing data

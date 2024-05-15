@@ -1,23 +1,17 @@
 const fs = require("fs")
 
 //test command for Windows comment out in AWS
-activityFile = fs.readFileSync("activityAppend.json")
-const fileDer = ""
+//activityFile = fs.readFileSync("activityAppend.json")
+//const fileDer = ""
+const fileDer = "Documents/fitnessData/"
 
-//actual for AWS comment out in Windows
-//activityFile = fs.readFileSync(fileDer+"ativityAppend.json")
-//const fileDer = "Documents/fitnessData/"
-
+//read in ongoing activity file
+activityFile = fs.readFileSync(fileDer+"activityAppend.json")
 activityFile =  JSON.parse(activityFile)
 
-//Load in the new data command for Windows comment out in AWS
-//dataExtract = fs.readFileSync("garminActivityExtract.json")
-dataExtract = fs.readFileSync("testGarminActivityExtract.json")
-
-//Load in the new data command for AWS comment out in windows
+//Load in the new data extract
 //dataExtract = fs.readFileSync(fileDer+"garminActivityExtract.json")
-//dataExtract = fs.readFileSync(fileDer+"garminActivityExtract.json")
-
+dataExtract = fs.readFileSync(fileDer+"testGarminActivityExtract.json")
 
 dataExtract = JSON.parse(dataExtract)
 
